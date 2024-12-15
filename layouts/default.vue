@@ -1,9 +1,8 @@
 <template>
-    <Sidebar />
-    <div class="p-4 sm:ml-64">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-            <slot />
-        </div>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-[220px_1fr] lg:gap-8">
+      <div class="h-32 rounded-lg bg-gray-200">
+        <Sidebar />
+      </div>
+      <div class="h-32 rounded-lg bg-gray-200"></div>
     </div>
-</template>
-  
+  </template>
