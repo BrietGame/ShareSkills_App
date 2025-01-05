@@ -75,10 +75,21 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
+import { watch } from 'vue';
 
 const route = useRoute();
-const title = route.meta.title || "Titre par défaut";
-const description = route.meta.description || "";
-const layoutProps = route.meta.layoutProps || {};
+const title = ref(route.meta.title || 'Titre par défaut');
+const description = ref(route.meta.description || '');
+const layoutProps = ref(route.meta.layoutProps || {});
+
+// Mettre à jour les propriétés dynamiques lorsque la route change
+watch(
+  () => route.fullPath, // Observer la route complète
+  () => {
+    title.value = route.meta.title || 'Titre par défaut';
+    description.value = route.meta.description || '';
+    layoutProps.value = route.meta.layoutProps || {};
+  }
+);
 </script>
