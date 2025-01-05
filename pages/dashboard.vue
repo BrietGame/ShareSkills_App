@@ -1,17 +1,5 @@
 <template>
     <div>
-        <header class="bg-white mb-12">
-            <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-                <div>
-                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Tableau de bord</h1>
-            
-                    <p class="mt-1.5 text-sm text-gray-500">
-                        Consultez les statistiques de vos formations
-                    </p>
-                </div>
-            </div>
-        </header>
-        
         <section>
             <div class="flex flex-row justify-between">
                 <CardStat
@@ -49,4 +37,14 @@ defineComponent({
         CardStat
     }
 })
+
+definePageMeta({
+  title: "Tableau de bord",
+  description: "Consultez les statistiques de vos formations",
+  layoutProps: {
+    showSidebar: true,
+    breadcrumbs: ["Accueil"],
+    customClass: "bg-gray-100"
+  },
+});
 </script>
