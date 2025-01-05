@@ -1,11 +1,12 @@
 <template>
-    <div>
-
-        <p>test</p>
+    <div class="flex flex-row gap-4 flex-wrap">
+        <FormationCard v-for="formation in formations" :key="formation.title" v-bind="formation"
+        />
     </div>
 </template>
 
 <script setup>
+import FormationCard from '~/components/FormationCard.vue'
 definePageMeta({
   title: "Formations publiées",
   description: "Liste des formations publiées",
@@ -27,4 +28,29 @@ definePageMeta({
     },
   },
 });
+
+let formations = ref([
+    {
+        title: "Formation de développement web",
+        author: {
+            name: "John Doe"
+        },
+        to: "/formations/1",
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        etat: "Publiée",
+        publishedAt: "12 octobre 2021",
+        readingTime: "5 min"
+    },
+    {
+        title: "Formation de développement mobile",
+        author: {
+            name: "Jane Doe"
+        },
+        to: "/formations/2",
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        etat: "Publiée",
+        publishedAt: "12 octobre 2021",
+        readingTime: "5 min"
+    },
+])
 </script>
