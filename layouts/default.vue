@@ -3,6 +3,10 @@
       <div class="h-32 rounded-lg bg-gray-200">
         <Sidebar />
       </div>
-      <div class="h-32 rounded-lg bg-gray-200"></div>
+      <div class="h-32 rounded-lg">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+          <slot />
+        </div>
+      </div>
     </div>
   </template>
